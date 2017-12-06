@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MvcBlog.Models.Yorum>
+@{ 
+    Layout = null;
+}
+<h4>Son Yorumlar</h4>
+<div class="row">
+    <div class="col-lg-12">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Icerik</li>
+            }
+        </ul>
+
+    </div>
+</div>
+

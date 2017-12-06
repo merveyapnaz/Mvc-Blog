@@ -1,0 +1,67 @@
+﻿@model MvcBlog.Models.Uye
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Üye</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Yetki : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetki1)
+        </dd>
+
+        <dt>
+            Kullanıcı Adı : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+        <dt>
+            Eposta : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Şifre : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            Ad Soyad : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            Fotoğraf : 
+        </dt>
+
+        <dd>
+            <img src="@Model.Foto" class="img-circle img-responsive" alt="@Model.AdSoyad" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.UyeId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    @Html.AntiForgeryToken()
+    <h2>İletişim Bilgilerini Değiştirme</h2>
+    <hr />
+    <div>
+        <div>
+
+            <h4>Yeni eposta adresini girin: </h4><br />
+            <textarea typeof="text" class="form-control" id="ePosta" ></textarea><br /><br />
+            <h4>Yeni sosyal medya adreslerini girin: </h4><br />
+            <textarea typeof="text" class="form-control" id="sosyalMedya"></textarea><br /><br /><br /><br />
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Güncelle" class="btn btn-default" />
+            </div>
+        </div>
+
+
+    </div>
+
+<script src="~/Content/js/jquery.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ePosta = $("#ePosta").val();
+        var SosyalMedya = $("#sosyalMedya").val();
+        $.ajax({
+            url: '/Home/Iletisim/',
+            data: { eposta: ePosta, sosyalMedya: SosyalMedya },
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                alert("Başarılı ");
+            }
+        })
+
+
+    })
+</script>
+
